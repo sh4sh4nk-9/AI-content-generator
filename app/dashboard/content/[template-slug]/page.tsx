@@ -18,7 +18,7 @@ import Templates from "@/app/(data)/Templates";
 
 interface PROPS {
   params: {
-    "template-slug": string;
+    "template-slug": string
   };
 }
 
