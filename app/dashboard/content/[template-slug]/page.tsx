@@ -17,10 +17,9 @@ import { UpdateCreditUsage } from "@/app/(context)/UpdateCreditUsage";
 import Templates from "@/app/(data)/Templates";
 
 interface PROPS {
-  params: {
-    "template-slug": string
-  };
+  params: Promise<{ "template-slug": string }>;
 }
+
 
 function CreateNewContent({ params }: PROPS) { 
   const [loading, setLoading] = useState(false);
