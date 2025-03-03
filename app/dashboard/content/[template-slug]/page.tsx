@@ -2,7 +2,7 @@
 import React, { useContext, useState } from "react";
 import FormSection from "../components/FormSection";
 import OutputSection from "../components/OutputSection";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -16,12 +16,13 @@ import { UserSubscriptionContext } from "@/app/(context)/UserSubscriptionContext
 import { UpdateCreditUsage } from "@/app/(context)/UpdateCreditUsage";
 import Templates from "@/app/(data)/Templates";
 
-interface PROPS {
-  params: Promise<{ "template-slug": string }>;
+interface Props {
+  params: {
+    "template-slug": string;
+  };
 }
 
-
-function CreateNewContent({ params }: PROPS) { 
+const CreateNewContent: React.FC<Props> = ({ params }) => {
   const [loading, setLoading] = useState(false);
   const [aiOutput, setAiOutput] = useState<string>("");
   const { user } = useUser();
@@ -30,7 +31,7 @@ function CreateNewContent({ params }: PROPS) {
   const { userSubscription } = useContext(UserSubscriptionContext);
   const { creditUsage, setCreditUsage } = useContext(UpdateCreditUsage);
 
-  const maxWords = userSubscription ? 100000 : 10000; 
+  const maxWords = userSubscription ? 100000 : 10000;
 
   const GenerateAIContent = async (FormData: any) => {
     if (totalUsage >= maxWords) {
@@ -39,9 +40,10 @@ function CreateNewContent({ params }: PROPS) {
       return;
     }
 
+    setLoading(true);
     const selectedTemplate = Templates.find(
       (item) => item.slug === params["template-slug"]
-    ); 
+    );
 
     if (!selectedTemplate) {
       alert("Invalid template!");
@@ -57,10 +59,10 @@ function CreateNewContent({ params }: PROPS) {
 
     await SaveInDb(FormData, selectedTemplate.slug, aiResponseText);
     setLoading(false);
-    setCreditUsage(Date.now()); 
+    setCreditUsage(Date.now());
   };
 
-  const SaveInDb = async (FormData: any, slug: any, aiResp: string) => {
+  const SaveInDb = async (FormData: any, slug: string, aiResp: string) => {
     try {
       await db.insert(AIOutput).values({
         FormData: FormData,
@@ -96,6 +98,6 @@ function CreateNewContent({ params }: PROPS) {
       </div>
     </div>
   );
-}
+};
 
 export default CreateNewContent;
