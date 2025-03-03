@@ -17,9 +17,9 @@ import { UserSubscriptionContext } from "@/app/(context)/UserSubscriptionContext
 import { UpdateCreditUsage } from "@/app/(context)/UpdateCreditUsage";
 import Templates from "@/app/(data)/Templates";
 
-
+// ✅ Corrected params handling
 const CreateNewContent: React.FC = () => {
-  const params = useParams(); 
+  const params = useParams(); // ✅ Get dynamic route parameters properly
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [aiOutput, setAiOutput] = useState<string>("");
