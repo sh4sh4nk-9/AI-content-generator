@@ -10,7 +10,7 @@ import moment from "moment";
 import { UserSubscriptionContext } from "@/app/(context)/UserSubscriptionContext";
 import { TotalUsageContext } from "@/app/(context)/TotalUsageContext";
 
-export const plans = [
+const plans = [
   { name: "Free", price: 0, credits: 10000, description: "Great for starters" },
   { name: "Pro", price: 200, originalPrice: 300, credits: 100000, description: "Best for professionals & regular users" },
 ];

@@ -2,7 +2,7 @@
 import React, { useContext, useState } from "react";
 import FormSection from "../components/FormSection";
 import OutputSection from "../components/OutputSection";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -22,8 +22,7 @@ interface PROPS {
   };
 }
 
-function CreateNewContent(props: PROPS) {
-  const params = useParams();
+function CreateNewContent({ params }: PROPS) { // ✅ Use props.params directly
   const [loading, setLoading] = useState(false);
   const [aiOutput, setAiOutput] = useState<string>("");
   const { user } = useUser();
@@ -41,10 +40,9 @@ function CreateNewContent(props: PROPS) {
       return;
     }
 
-    setLoading(true);
     const selectedTemplate = Templates.find(
       (item) => item.slug === params["template-slug"]
-    );
+    ); // ✅ Works fine now
 
     if (!selectedTemplate) {
       alert("Invalid template!");
@@ -94,8 +92,7 @@ function CreateNewContent(props: PROPS) {
         />
         {/* Output Section */}
         <div className="col-span-2">
-        <OutputSection aiOutput={aiOutput} loading={loading} />
-
+          <OutputSection aiOutput={aiOutput} loading={loading} />
         </div>
       </div>
     </div>
