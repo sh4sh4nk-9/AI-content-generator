@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Dancing_Script} from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Analytics } from '@vercel/analytics/next';
 
 const dance_script = Dancing_Script({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={pops.className}
       >
         {children}
+        <Analytics />
       </body>
     </html>
     </ClerkProvider>
