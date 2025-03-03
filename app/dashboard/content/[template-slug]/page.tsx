@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useContext, useState } from "react";
 import FormSection from "../components/FormSection";
 import OutputSection from "../components/OutputSection";
@@ -16,9 +17,10 @@ import { UserSubscriptionContext } from "@/app/(context)/UserSubscriptionContext
 import { UpdateCreditUsage } from "@/app/(context)/UpdateCreditUsage";
 import Templates from "@/app/(data)/Templates";
 
-// ✅ Corrected the type for 'params'
 interface PageProps {
-  params: { "template-slug": string };
+  params: {
+    "template-slug": string;
+  };
 }
 
 const CreateNewContent: React.FC<PageProps> = ({ params }) => {
