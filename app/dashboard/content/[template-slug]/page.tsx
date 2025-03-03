@@ -42,7 +42,7 @@ function CreateNewContent({ params }: PROPS) {
 
     const selectedTemplate = Templates.find(
       (item) => item.slug === params["template-slug"]
-    ); // ✅ Works fine now
+    ); 
 
     if (!selectedTemplate) {
       alert("Invalid template!");
