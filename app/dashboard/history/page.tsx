@@ -109,7 +109,7 @@ const HistoryPage = () => {
             <td className="px-4 py-2">{item.aiResponse.split(" ").length}</td>
             <td className="px-4 py-2">
             <Button variant="outline" onClick={() => copyToClipboard(item.aiResponse)}>
-                <Clipboard size={16} /> Copy
+                <Clipboard size={16}/> Copy
             </Button>
             </td>
         </tr>

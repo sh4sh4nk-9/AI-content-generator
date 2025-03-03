@@ -31,8 +31,8 @@ function BillingPage() {
       console.log(response.data);
       OnPayment(response.data.id);
     } catch (error) {
-      console.error("Error creating subscription:", error);
-      alert("Something went wrong. Please try again.");
+      // console.error("Error creating subscription:", error);
+      alert("Something went wrong. Please try Refreshing the page!!");
       setLoadingPlan(null);
     }
   };

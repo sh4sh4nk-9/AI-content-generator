@@ -17,9 +17,9 @@ import { UserSubscriptionContext } from "@/app/(context)/UserSubscriptionContext
 import { UpdateCreditUsage } from "@/app/(context)/UpdateCreditUsage";
 import Templates from "@/app/(data)/Templates";
 
-// ✅ Corrected params handling
+
 const CreateNewContent: React.FC = () => {
-  const params = useParams(); // ✅ Get dynamic route parameters properly
+  const params = useParams(); 
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [aiOutput, setAiOutput] = useState<string>("");
@@ -39,7 +39,7 @@ const CreateNewContent: React.FC = () => {
     }
 
     setLoading(true);
-    const templateSlug = params["template-slug"] as string; // ✅ Extract `template-slug`
+    const templateSlug = params["template-slug"] as string; 
 
     const selectedTemplate = Templates.find((item) => item.slug === templateSlug);
 
