@@ -22,7 +22,7 @@ interface PROPS {
   };
 }
 
-function CreateNewContent({ params }: PROPS) { // ✅ Use props.params directly
+function CreateNewContent({ params }: PROPS) { 
   const [loading, setLoading] = useState(false);
   const [aiOutput, setAiOutput] = useState<string>("");
   const { user } = useUser();
