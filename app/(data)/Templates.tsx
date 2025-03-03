@@ -208,6 +208,19 @@ export default [
                 // }
             ],
         },
+        {
+            name: 'Daily Workout Plan Generator',
+            desc: 'Create a personalized workout plan based on your fitness goals.',
+            category: 'Health & Fitness',
+            icon: 'https://cdn-icons-png.flaticon.com/128/1041/1041870.png',
+            slug: 'workout-plan-generator',
+            aiPrompt: 'Generate a **personalized daily workout plan** based on the given **fitness goal, duration, and fitness level**.',
+            form: [
+                { label: 'Fitness Goal (e.g., Weight Loss, Muscle Gain)', field: 'input', name: 'goal', required: true },
+                { label: 'Workout Duration (minutes)', field: 'input', name: 'duration', required: true },
+                { label: 'Fitness Level (Beginner/Intermediate/Advanced)', field: 'input', name: 'level', required: true }
+            ]
+        }
 
     
 ];
