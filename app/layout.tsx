@@ -14,7 +14,7 @@ const pops = Poppins({
 
 
 export const metadata: Metadata = {
-  title: "Nex9",
+  title: "NNEGEN",
   description: "Create Faster.Create Smarter",
 };
 

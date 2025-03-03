@@ -41,7 +41,7 @@ function BillingPage() {
     const options = {
       key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
       subscription_id: subId,
-      name: "Nex9",
+      name: "NNEGEN",
       description: "Monthly Subscription",
       handler: async (response: any) => {
         console.log(response);
