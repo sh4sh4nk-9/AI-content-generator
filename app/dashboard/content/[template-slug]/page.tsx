@@ -17,17 +17,14 @@ import { UserSubscriptionContext } from "@/app/(context)/UserSubscriptionContext
 import { UpdateCreditUsage } from "@/app/(context)/UpdateCreditUsage";
 import Templates from "@/app/(data)/Templates";
 
-interface PageProps {
-  params: {
-    "template-slug": string;
-  };
-}
 
-const CreateNewContent: React.FC<PageProps> = ({ params }) => {
+const CreateNewContent: React.FC = () => {
+  const params = useParams(); 
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [aiOutput, setAiOutput] = useState<string>("");
+
   const { user } = useUser();
-  const router = useRouter();
   const { totalUsage, setTotalUsage } = useContext(TotalUsageContext);
   const { userSubscription } = useContext(UserSubscriptionContext);
   const { creditUsage, setCreditUsage } = useContext(UpdateCreditUsage);
@@ -42,9 +39,9 @@ const CreateNewContent: React.FC<PageProps> = ({ params }) => {
     }
 
     setLoading(true);
-    const selectedTemplate = Templates.find(
-      (item) => item.slug === params["template-slug"]
-    );
+    const templateSlug = params["template-slug"] as string; // ✅ Extract `template-slug`
+
+    const selectedTemplate = Templates.find((item) => item.slug === templateSlug);
 
     if (!selectedTemplate) {
       alert("Invalid template!");
