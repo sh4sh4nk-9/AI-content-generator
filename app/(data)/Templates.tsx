@@ -1,64 +1,6 @@
 
 export default [
-    {
-        name: 'Blog Title',
-        desc: 'An AI tool that generates compelling blog titles based on your topic and outline.',
-        category: 'Blog',
-        icon: 'https://cdn-icons-png.flaticon.com/128/4186/4186534.png',
-        aiPrompt: 'Generate **5 creative blog titles** in bullet points based on the given **niche & outline**. Titles should be engaging, SEO-friendly, and click-worthy.',
-        slug: 'generate-blog-title',
-        form: [
-            { label: 'Enter your blog niche', field: 'input', name: 'niche', required: true },
-            { label: 'Enter blog outline', field: 'textarea', name: 'outline' }
-        ]
-    },
-    {
-        name: 'Blog Content',
-        desc: 'Generate high-quality, well-structured blog content effortlessly.',
-        category: 'Blog',
-        icon: 'https://cdn-icons-png.flaticon.com/128/1187/1187595.png',
-        slug: 'blog-content-generation',
-        aiPrompt: 'Write a **detailed blog post** based on the given **topic & outline**. The content should be engaging, informative, and optimized for SEO.',
-        form: [
-            { label: 'Enter your blog topic', field: 'input', name: 'topic', required: true },
-            { label: 'Enter blog outline', field: 'textarea', name: 'outline' }
-        ]
-    },
-    {
-        name: 'Blog Topic Ideas',
-        desc: 'Get AI-generated blog topic ideas that are engaging and trending.',
-        category: 'Blog',
-        icon: 'https://cdn-icons-png.flaticon.com/128/13161/13161332.png',
-        slug: 'blog-topic-idea',
-        aiPrompt: 'Provide **5 trending blog topic ideas** in bullet points, based on the given **niche**. Titles should be creative and aligned with current industry trends.',
-        form: [
-            { label: 'Enter your Niche', field: 'input', name: 'niche', required: true }
-        ]
-    },
-    {
-        name: 'YouTube SEO Title',
-        desc: 'Generate high-ranking, SEO-optimized YouTube titles.',
-        category: 'YouTube Tools',
-        icon: 'https://cdn-icons-png.flaticon.com/128/402/402075.png',
-        slug: 'youtube-seo-title',
-        aiPrompt: 'Generate **5 SEO-optimized YouTube titles** based on the given **keywords & outline**. Titles should be engaging, keyword-rich, and optimized for rankings.',
-        form: [
-            { label: 'Enter your YouTube video keywords', field: 'input', name: 'keywords', required: true },
-            { label: 'Enter YouTube description outline', field: 'textarea', name: 'outline' }
-        ]
-    },
-    {
-        name: 'YouTube Description',
-        desc: 'Create an engaging and optimized YouTube description with emojis.',
-        category: 'YouTube Tools',
-        icon: 'https://cdn-icons-png.flaticon.com/128/2111/2111748.png',
-        slug: 'youtube-description',
-        aiPrompt: 'Generate a **4-5 line YouTube description** with emojis, based on the given **topic & outline**. The description should be engaging, concise, and encourage user interaction.',
-        form: [
-            { label: 'Enter your YouTube video topic/title', field: 'input', name: 'topic', required: true },
-            { label: 'Enter YouTube outline', field: 'textarea', name: 'outline' }
-        ]
-    },
+
     {
         name: 'Rewrite Article (Plagiarism Free)',
         desc: 'Rewrite any article to be plagiarism-free and AI detector-proof.',
@@ -220,7 +162,66 @@ export default [
                 { label: 'Workout Duration (minutes)', field: 'input', name: 'duration', required: true },
                 { label: 'Fitness Level (Beginner/Intermediate/Advanced)', field: 'input', name: 'level', required: true }
             ]
-        }
+        },
+        {
+            name: 'Blog Title',
+            desc: 'An AI tool that generates compelling blog titles based on your topic and outline.',
+            category: 'Blog',
+            icon: 'https://cdn-icons-png.flaticon.com/128/4186/4186534.png',
+            aiPrompt: 'Generate **5 creative blog titles** in bullet points based on the given **niche & outline**. Titles should be engaging, SEO-friendly, and click-worthy.',
+            slug: 'generate-blog-title',
+            form: [
+                { label: 'Enter your blog niche', field: 'input', name: 'niche', required: true },
+                { label: 'Enter blog outline', field: 'textarea', name: 'outline' }
+            ]
+        },
+        {
+            name: 'Blog Content',
+            desc: 'Generate high-quality, well-structured blog content effortlessly.',
+            category: 'Blog',
+            icon: 'https://cdn-icons-png.flaticon.com/128/1187/1187595.png',
+            slug: 'blog-content-generation',
+            aiPrompt: 'Write a **detailed blog post** based on the given **topic & outline**. The content should be engaging, informative, and optimized for SEO.',
+            form: [
+                { label: 'Enter your blog topic', field: 'input', name: 'topic', required: true },
+                { label: 'Enter blog outline', field: 'textarea', name: 'outline' }
+            ]
+        },
+        {
+            name: 'Blog Topic Ideas',
+            desc: 'Get AI-generated blog topic ideas that are engaging and trending.',
+            category: 'Blog',
+            icon: 'https://cdn-icons-png.flaticon.com/128/13161/13161332.png',
+            slug: 'blog-topic-idea',
+            aiPrompt: 'Provide **5 trending blog topic ideas** in bullet points, based on the given **niche**. Titles should be creative and aligned with current industry trends.',
+            form: [
+                { label: 'Enter your Niche', field: 'input', name: 'niche', required: true }
+            ]
+        },
+        {
+            name: 'YouTube SEO Title',
+            desc: 'Generate high-ranking, SEO-optimized YouTube titles.',
+            category: 'YouTube Tools',
+            icon: 'https://cdn-icons-png.flaticon.com/128/402/402075.png',
+            slug: 'youtube-seo-title',
+            aiPrompt: 'Generate **5 SEO-optimized YouTube titles** based on the given **keywords & outline**. Titles should be engaging, keyword-rich, and optimized for rankings.',
+            form: [
+                { label: 'Enter your YouTube video keywords', field: 'input', name: 'keywords', required: true },
+                { label: 'Enter YouTube description outline', field: 'textarea', name: 'outline' }
+            ]
+        },
+        {
+            name: 'YouTube Description',
+            desc: 'Create an engaging and optimized YouTube description with emojis.',
+            category: 'YouTube Tools',
+            icon: 'https://cdn-icons-png.flaticon.com/128/2111/2111748.png',
+            slug: 'youtube-description',
+            aiPrompt: 'Generate a **4-5 line YouTube description** with emojis, based on the given **topic & outline**. The description should be engaging, concise, and encourage user interaction.',
+            form: [
+                { label: 'Enter your YouTube video topic/title', field: 'input', name: 'topic', required: true },
+                { label: 'Enter YouTube outline', field: 'textarea', name: 'outline' }
+            ]
+        },
 
     
 ];
