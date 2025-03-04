@@ -212,7 +212,7 @@ export default [
             name: 'Daily Workout Plan Generator',
             desc: 'Create a personalized workout plan based on your fitness goals.',
             category: 'Health & Fitness',
-            icon: 'https://cdn-icons-png.flaticon.com/128/1041/1041870.png',
+            icon: 'https://cdn-icons-png.flaticon.com/128/1616/1616487.png',
             slug: 'workout-plan-generator',
             aiPrompt: 'Generate a **personalized daily workout plan** based on the given **fitness goal, duration, and fitness level**.',
             form: [
