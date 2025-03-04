@@ -28,32 +28,38 @@ function BillingPage() {
     try {
       setLoadingPlan(plan.name);
       const response = await axios.post("/api/create-subscription", { plan });
-      console.log(response.data);
+      console.log("Subscription Created:", response.data);
       OnPayment(response.data.id);
     } catch (error) {
-      // console.error("Error creating subscription:", error);
-      alert("Something went wrong. Please try Refreshing the page!!");
+      alert("Something went wrong. Please refresh the page and try again!");
       setLoadingPlan(null);
     }
   };
 
   const OnPayment = (subId: string) => {
-    const options = {
-      key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-      subscription_id: subId,
-      name: "NNEGEN",
-      description: "Monthly Subscription",
-      handler: async (response: any) => {
-        console.log(response);
-        if (response) {
-          await SaveSubscription(response.razorpay_payment_id);
-        }
-        setLoadingPlan(null);
-      },
-    };
-    // @ts-ignore
-    const rzp = new window.Razorpay(options);
-    rzp.open();
+    if (typeof window !== "undefined" && window.Razorpay) {
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+        subscription_id: subId,
+        name: "NNEGEN",
+        description: "Monthly Subscription",
+        handler: async (response: any) => {
+          console.log("Payment Success:", response);
+          if (response?.razorpay_payment_id) {
+            await SaveSubscription(response.razorpay_payment_id);
+          }
+          setLoadingPlan(null);
+        },
+        theme: {
+          color: "#6366F1",
+        },
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } else {
+      alert("Razorpay is not loaded. Please refresh the page.");
+    }
   };
 
   const SaveSubscription = async (paymentId: string) => {
@@ -67,10 +73,8 @@ function BillingPage() {
       });
 
       console.log("Subscription saved successfully!");
-
       setUserSubscription(true);
       setTotalUsage(0);
-      
       window.location.reload();
     } catch (error) {
       console.error("Error saving subscription:", error);
