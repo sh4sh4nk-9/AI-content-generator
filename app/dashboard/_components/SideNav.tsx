@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-import { History, CreditCard, User, HomeIcon } from 'lucide-react';
+import { History, CreditCard, User, HomeIcon, Handshake, Shield, ReceiptText } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -29,6 +29,21 @@ function SideNav(){
       icon: User,
       path: '/dashboard/profile'
     },
+    {
+      name:'About Us',
+      icon: Handshake,
+      path: '/dashboard/About_Us'
+    },
+    {
+      name: 'Privacy Policy',
+      icon: Shield,
+      path: '/dashboard/Privacy_Policy'
+    },
+    {
+      name:'T&C',
+      icon: ReceiptText,
+      path: '/dashboard/T&C'
+    }
   ];
 
   const path = usePathname();
