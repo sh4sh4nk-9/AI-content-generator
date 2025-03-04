@@ -61,7 +61,7 @@ export default function About() {
           className="px-8 py-4 text-lg font-semibold rounded-full bg-gradient-to-r from-purple-500 to-blue-500 shadow-lg transition-all transform hover:scale-105 hover:shadow-xl"
           onClick={() => router.push("/contact")}
         >
-          Contact Us 📩
+          Reach Out 📩
         </Button>
       </motion.div>
     </div>
