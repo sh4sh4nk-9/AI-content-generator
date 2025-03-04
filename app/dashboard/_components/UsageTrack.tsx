@@ -16,7 +16,7 @@ export function UsageTrack() {
     const { user } = useUser();
     const { totalUsage, setTotalUsage } = useContext(TotalUsageContext);
     const { userSubscription, setUserSubscription } = useContext(UserSubscriptionContext);
-    const [maxWords, setMaxWords] = useState(10000);
+    const [maxWords, setMaxWords] = useState(100000);
     const { creditUsage, setCreditUsage } = useContext(UpdateCreditUsage);
 
     useEffect(() => {
@@ -58,7 +58,7 @@ export function UsageTrack() {
         const result = await db.select().from(UserSubscription)
             .where(eq(UserSubscription.email, user.primaryEmailAddress.emailAddress));
 
-        if (result.length > 0) { // ✅ Fix: Check if array has data
+        if (result.length > 0) { 
             setUserSubscription(true);
             setMaxWords(100000);
         }

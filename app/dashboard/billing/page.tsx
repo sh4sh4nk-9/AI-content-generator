@@ -15,6 +15,12 @@ const plans = [
   { name: "Pro", price: 200, originalPrice: 300, credits: 100000, description: "Best for professionals & regular users" },
 ];
 
+declare global{
+  interface Window {
+    Razorpay: any;
+  }
+}
+
 function BillingPage() {
   const { user } = useUser();
   const [selectedPlan, setSelectedPlan] = useState<string>("Free");
