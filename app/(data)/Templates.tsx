@@ -2,7 +2,7 @@
 export default [
 
     {
-        name: 'Rewrite Article (Plagiarism Free)',
+        name: 'Rewrite Article(Plagiarism Free)',
         desc: 'Rewrite any article to be plagiarism-free and AI detector-proof.',
         icon: 'https://cdn-icons-png.flaticon.com/128/3131/3131607.png',
         category: 'Rewriting Tool',
