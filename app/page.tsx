@@ -70,14 +70,14 @@ export default function Home() {
           <h3 className="text-xl font-semibold text-blue-400">✍️ AI Writing</h3>
           <p className="text-sm text-gray-300 mt-2">Generate blogs, articles, and engaging content effortlessly.</p>
         </div>
-<div className="p-5 bg-gray-900 rounded-xl shadow-lg border border-gray-700">
-  <h3 className="text-xl font-semibold text-yellow-400">📝 Smart Notes</h3>
-  <p className="text-sm text-gray-300 mt-2">Create structured and concise notes for any topic or chapter.</p>
-</div>
-<div className="p-5 bg-gray-900 rounded-xl shadow-lg border border-gray-700">
-  <h3 className="text-xl font-semibold text-green-400">🚀 Productivity</h3>
-  <p className="text-sm text-gray-300 mt-2">Enhance workflow with AI-powered emails, responses, and automation.</p>
-</div>
+        <div className="p-5 bg-gray-900 rounded-xl shadow-lg border border-gray-700">
+          <h3 className="text-xl font-semibold text-yellow-400">📝 Smart Notes</h3>
+          <p className="text-sm text-gray-300 mt-2">Create structured and concise notes for any topic or chapter.</p>
+        </div>
+        <div className="p-5 bg-gray-900 rounded-xl shadow-lg border border-gray-700">
+          <h3 className="text-xl font-semibold text-green-400">🚀 Productivity</h3>
+          <p className="text-sm text-gray-300 mt-2">Enhance workflow with AI-powered emails, responses, and automation.</p>
+        </div>
 
         
       </motion.div>
